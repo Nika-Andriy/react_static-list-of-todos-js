@@ -1,2 +1,16 @@
 // Add the required props
-export const UserInfo = () => <>UserInfo markup</>;
+export const UserInfo = ({ user, users = [], userId }) => {
+  const currentUser = user || users.find(u => u.id === userId) || null;
+
+  return (
+    currentUser && (
+      <a
+        key={currentUser.id}
+        className="UserInfo"
+        href={`mailto:${currentUser.email}`}
+      >
+        {currentUser.name}
+      </a>
+    )
+  );
+};
