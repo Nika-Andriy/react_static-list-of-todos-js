@@ -4,11 +4,7 @@ export const UserInfo = ({ user, users = [], userId }) => {
 
   return (
     currentUser && (
-      <a
-        key={currentUser.id}
-        className="UserInfo"
-        href={`mailto:${currentUser.email}`}
-      >
+      <a className="UserInfo" href={`mailto:${currentUser.email}`}>
         {currentUser.name}
       </a>
     )

@@ -6,9 +6,6 @@ export const TodoInfo = ({ todo, users }) => (
     className={`TodoInfo ${todo.completed ? 'TodoInfo--completed' : ''}`}
   >
     <h2 className="TodoInfo__title">{todo.title}</h2>
-    <UserInfo
-      users={users || (todo.user ? [todo.user] : [])}
-      userId={todo.userId}
-    />
+    <UserInfo user={todo.user} users={users} userId={todo.userId} />
   </article>
 );
